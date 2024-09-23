@@ -4,6 +4,7 @@ namespace ReactMovieApp.Services
 {
     public interface IMovieSearchService
     {
+       
         void SaveMovieSearched();
 
         void UpdateMovieSearched(int limit);
@@ -13,3 +14,4 @@ namespace ReactMovieApp.Services
         List<Movie> GetLatestMovieSearched(int limit);
     }
 }
+

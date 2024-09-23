@@ -2,6 +2,7 @@
 {
     public class Movie
     {
+        public int Id { get; set; }
         public string? Title { get; set; }
         public string? Year { get; set; }
         public string? Rated { get; set; }
@@ -27,6 +28,7 @@
         public string? Production { get; set; }
         public string? Website { get; set; }
         public string? Response { get; set; }
+        public ICollection<MovieSearch> MovieSearches { get; set; } = new List<MovieSearch>();
     }
 }
 

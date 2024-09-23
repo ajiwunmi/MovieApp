@@ -3,13 +3,12 @@ using ReactMovieApp.Models;
 
 namespace ReactMovieApp.Repositories
 {
-    public interface IMovieRepository
+    public interface IMovieRepository : IDisposable
     {
-      
-        public Task<Movie> GetMovieByIdAsync(int id);
-
-        public Task SaveLatestSearchAsync(Movie movie);
-       
-
+        Task<Movie> GetMovieQueryByTitleAsync(int id);
+        Task<IEnumerable<Movie>> GetLatestMovieQueriesAsync(int count = 5);
+        Task AddMovieQueryAsync(Movie movie);
+        Task SaveChangesAsync();
     }
+
 }

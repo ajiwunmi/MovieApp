@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace ReactMovieApp.Repositories
 {
-    public interface IMovieSearchRepository
+    public interface IMovieSearchRepository : IDisposable
     {
-        Task SaveQueryAsync(string query);
-        Task<List<string>> GetLatestQueriesAsync(int count);
+       // List<MovieSearch> GetAll();
 
-        List<MovieSearch> GetAll();
+        //Task<MovieSearch> GetMovieQueryByTitleAsync(string title);
+        Task<IEnumerable<MovieSearch>> GetLatestMovieQueriesAsync(int count = 5);
+        Task<List<MovieSearch>> GetLatestSearchesAsync(int count);
+        Task AddMovieQueryAsync(MovieSearch movieQuery);
+        Task SaveChangesAsync();
     }
 }
 
